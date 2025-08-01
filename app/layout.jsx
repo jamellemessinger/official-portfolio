@@ -1,19 +1,20 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
+import NavBar from './components/NavBar';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata = {
-  title: "Jamelle Messinger",
-  description: "Official Portfolio by Jamelle Messinger",
+  title: 'Jamelle Messinger',
+  description: 'Official Portfolio by Jamelle Messinger',
 };
 
 export default function RootLayout({ children }) {
@@ -22,7 +23,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <NavBar />
+        <main>{children}</main>
       </body>
     </html>
   );
