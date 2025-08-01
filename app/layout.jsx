@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Jamelle Messinger",
-  description: "Offcial Portfolio for Jamelle Messinger",
+  description: "Offcial Portfolio by Jamelle Messinger",
 };
 
 export default function RootLayout({ children }) {
