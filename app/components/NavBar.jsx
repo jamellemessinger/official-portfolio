@@ -7,8 +7,11 @@ const NavBar = () => {
       <div className="hidden md:block">Jamelle Messinger</div>
       <div className="flex gap-2 items-center">
         <Link href="/">Home</Link>
+        <span>|</span>
         <Link href="">Projects</Link>
+        <span>|</span>
         <Link href="">About</Link>
+        <span>|</span>
         <Link href="">Contact</Link>
       </div>
     </nav>

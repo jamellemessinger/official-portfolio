@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* Navigation Bar */
+nav span {
+  color: gray;
+}
