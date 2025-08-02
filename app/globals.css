@@ -1,6 +1,39 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Navigation Bar */
+nav {
+  background-color: whitesmoke;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid var(--color-gray-300);
+  padding: 1em 0.5em;
+  z-index: 1;
+}
+
+nav .flex-container {
+  display: flex;
+  gap: 0.5em;
+}
+
 nav span {
   color: var(--color-gray-300);
+}
+
+/* Main Page Content - {children} */
+main {
+  padding-top: 58px;
+}
+
+/* small */
+@media (min-width: 640px) {
+}
+
+/* medium */
+@media (min-width: 768px) {
+}
+
+/* large */
+@media (min-width: 1024px) {
 }
