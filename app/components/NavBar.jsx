@@ -6,11 +6,11 @@ const NavBar = () => {
       <div className="flex-container">
         <Link href="/">Home</Link>
         <span>|</span>
-        <Link href="">Projects</Link>
+        <Link href="/projects">Projects</Link>
         <span>|</span>
-        <Link href="">About</Link>
+        <Link href="/about">About</Link>
         <span>|</span>
-        <Link href="">Contact</Link>
+        <Link href="/contact">Contact</Link>
       </div>
     </nav>
   );
