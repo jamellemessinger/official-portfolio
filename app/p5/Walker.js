@@ -1,4 +1,4 @@
-class Walker {
+export default class Walker {
   constructor() {
     this.x = Math.random() * width;
     this.y = Math.random() * height;
