@@ -1,5 +1,7 @@
 export default class Walker {
-  constructor() {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
     this.x = Math.random() * width;
     this.y = Math.random() * height;
     stroke(
