@@ -1,6 +1,5 @@
 'use client';
 import { useRef, useEffect } from 'react';
-import p5 from 'p5';
 import Walker from '../p5/Walker';
 
 const P5Background = () => {
@@ -8,25 +7,43 @@ const P5Background = () => {
 
   useEffect(() => {
     let myP5;
-    let walker = new Walker();
 
-    const sketch = (p) => {
-      p.setup = () => {
-        p.createCanvas(p.windowWidth, p.windowHeight);
-        p.noStroke();
+    import('p5').then((p5) => {
+      const sketch = (p5Instance) => {
+        let walker;
+
+        p5Instance.setup = () => {
+          p5Instance.createCanvas(
+            p5Instance.windowWidth,
+            p5Instance.windowHeight
+          );
+          walker = new Walker(
+            p5Instance,
+            p5Instance.windowWidth,
+            p5Instance.windowHeight
+          );
+        };
+
+        p5Instance.draw = () => {
+          p5Instance.frameRate(24);
+          walker.show();
+          walker.move();
+
+          if (walker.offScreen()) {
+            walker = new Walker(p5Instance);
+          }
+        };
+
+        p5Instance.windowResized = () => {
+          p5Instance.resizeCanvas(
+            p5Instance.windowWidth,
+            p5Instance.windowHeight
+          );
+        };
       };
 
-      p.draw = () => {
-        walker.show();
-        walker.move();
-      };
-
-      p.windowResized = () => {
-        p.resizeCanvas(p.windowWidth, p.windowHeight);
-      };
-    };
-
-    myP5 = new p5(sketch, sketchRef.current);
+      myP5 = new p5.default(sketch, sketchRef.current);
+    });
 
     return () => {
       myP5.remove(); // clean up on unmount
