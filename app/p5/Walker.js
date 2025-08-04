@@ -9,7 +9,7 @@ export default class Walker {
       this.#randomNum255(),
       this.#randomNum255(),
       this.#randomNum255(),
-      75,
+      50,
     ];
   }
 
@@ -29,30 +29,30 @@ export default class Walker {
     return Math.floor(Math.random() * 255);
   }
 
-  show() {
+  show(size) {
     this.p5Instance.stroke(...this.color);
     this.p5Instance.point(this.x, this.y);
-    this.p5Instance.strokeWeight(10);
+    this.p5Instance.strokeWeight(size);
   }
 
-  move() {
+  move(stepSize) {
     let decision = Math.floor(Math.random() * 4);
 
     switch (decision) {
       case 0:
-        this.x += 10;
+        this.x += stepSize;
         break;
       case 1:
-        this.x -= 10;
+        this.x -= stepSize;
         break;
       case 2:
-        this.y += 10;
+        this.y += stepSize;
         break;
       case 3:
-        this.y -= 10;
+        this.y -= stepSize;
         break;
       default:
-        this.x += 5;
+        this.x += stepSize;
         break;
     }
   }

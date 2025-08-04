@@ -27,8 +27,8 @@ const P5Background = () => {
           p5Instance.frameRate(24);
 
           for (let i = 0; i < walkerArr.length; i++) {
-            walkerArr[i].show();
-            walkerArr[i].move();
+            walkerArr[i].show(20);
+            walkerArr[i].move(20);
             if (walkerArr[i].offScreen()) {
               walkerArr[i] = new Walker(p5Instance);
             }
