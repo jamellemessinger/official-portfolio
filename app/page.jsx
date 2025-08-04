@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import P5Background from './components/P5Background';
 
 export default function Home() {
