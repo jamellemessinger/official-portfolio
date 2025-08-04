@@ -24,7 +24,7 @@ const P5Background = () => {
         };
 
         p5Instance.draw = () => {
-          p5Instance.frameRate(6);
+          p5Instance.frameRate(18);
 
           for (let i = 0; i < walkerArr.length; i++) {
             walkerArr[i].show(20);
@@ -47,7 +47,7 @@ const P5Background = () => {
     });
 
     return () => {
-      myP5.remove(); // clean up on unmount
+      if (myP5) myP5.remove(); // clean up on unmount
     };
   }, []);
 
