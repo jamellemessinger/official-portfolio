@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+/* global styles */
+h1 {
+  font-size: 2em;
+}
+
 /* Navigation Bar */
 nav {
   background-color: whitesmoke;
@@ -47,9 +52,6 @@ nav span {
   padding-top: 4.125em;
 }
 
-h1 {
-  font-size: 2em;
-}
 
 /* small */
 @media (min-width: 640px) {
