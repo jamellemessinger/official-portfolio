@@ -24,7 +24,7 @@ const P5Background = () => {
         };
 
         p5Instance.draw = () => {
-          p5Instance.frameRate(24);
+          p5Instance.frameRate(6);
 
           for (let i = 0; i < walkerArr.length; i++) {
             walkerArr[i].show(20);
