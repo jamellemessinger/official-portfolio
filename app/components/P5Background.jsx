@@ -10,27 +10,28 @@ const P5Background = () => {
 
     import('p5').then((p5) => {
       const sketch = (p5Instance) => {
-        let walker;
+        let walkerArr = new Array(3);
 
         p5Instance.setup = () => {
           p5Instance.createCanvas(
             p5Instance.windowWidth,
             p5Instance.windowHeight
           );
-          walker = new Walker(
-            p5Instance,
-            p5Instance.windowWidth,
-            p5Instance.windowHeight
-          );
+
+          for (let i = 0; i < walkerArr.length; i++) {
+            walkerArr[i] = new Walker(p5Instance);
+          }
         };
 
         p5Instance.draw = () => {
           p5Instance.frameRate(24);
-          walker.show();
-          walker.move();
 
-          if (walker.offScreen()) {
-            walker = new Walker(p5Instance);
+          for (let i = 0; i < walkerArr.length; i++) {
+            walkerArr[i].show();
+            walkerArr[i].move();
+            if (walkerArr[i].offScreen()) {
+              walkerArr[i] = new Walker(p5Instance);
+            }
           }
         };
 

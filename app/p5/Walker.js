@@ -5,12 +5,12 @@ export default class Walker {
     this.height = this.p5Instance.windowHeight;
     this.x = Math.random() * this.width;
     this.y = Math.random() * this.height;
-    this.p5Instance.stroke(
+    this.color = [
       this.#randomNum255(),
       this.#randomNum255(),
       this.#randomNum255(),
-      75
-    );
+      75,
+    ];
   }
 
   offScreen() {
@@ -30,6 +30,7 @@ export default class Walker {
   }
 
   show() {
+    this.p5Instance.stroke(...this.color);
     this.p5Instance.point(this.x, this.y);
     this.p5Instance.strokeWeight(10);
   }
