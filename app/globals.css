@@ -29,12 +29,18 @@ main {
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   text-align: center;
-  background-color: oklch(0.6 0 100 / 50%);
-  width: 100%;
-  height: 13em;
+  background-color: oklch(1 0 100 / 50%);
+  backdrop-filter: blur(5px);
+  mask-image: linear-gradient(black 20%, transparent 100%);
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero h1 {
+  padding-top: 1.5em;
 }
 
 h1 {
